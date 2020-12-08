@@ -1,14 +1,13 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-#from sklearn.cross_validation import train_test_split
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
 
 def linearRegression():
     # Data Preprocessing
-    dataset = pd.read_csv('src/studentscores.csv')
+    dataset = pd.read_csv('src/linearRegression/datasets/studentscores.csv')
     
 
     X = dataset.iloc[:, :1].values
@@ -31,9 +30,9 @@ def linearRegression():
     plt.scatter(X_train, Y_train, color='red')
     plt.plot(X_train, regressor.predict(X_train), color='blue')
 
-    plt.savefig("src/figures/train.png")
+    plt.savefig("src/linearRegression/figures/train.png")
 
     plt.scatter(X_test, Y_test, color='red')
     plt.plot(X_test, regressor.predict(X_test), color='blue')
 
-    plt.savefig("src/figures/predict.png")
+    plt.savefig("src/linearRegression/figures/predict.png")
